@@ -2,7 +2,9 @@ import React from "react";
 import MainContract from "./contracts/Main.json";
 import OwnerVerify from "./components/OwnerVerify";
 import getWeb3 from "./getWeb3";
+import Upload from "./components/Upload";
 import { useEffect, useState } from "react";
+import './App.css';
 
 function App() {
   const [Web3Data, SetWeb3Data] = useState({
@@ -68,6 +70,7 @@ function App() {
   return (
     <div className="App">
       <OwnerVerify ownerVerify={ownerVerify} />
+      <Upload sendDocs={sendDocs}/>
     </div>
   );
 }
