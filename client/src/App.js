@@ -5,6 +5,7 @@ import getWeb3 from "./getWeb3";
 import Upload from "./components/Upload";
 import { useEffect, useState } from "react";
 import './App.css';
+import StudentVerify from "./components/StudentVerify";
 
 function App() {
   const [Web3Data, SetWeb3Data] = useState({
@@ -60,8 +61,23 @@ function App() {
   const ownerVerify = async (address) => {
     await Web3Data.contract.methods
       .ownerVerification(address)
-      .send({ from: Web3Data.accounts[0] });
+      .send({ from: Web3Data.accounts[0] })
+      .on("transactionHash", function (hash) {
+        console.log("Successfully Registered.");
+        console.log(hash);
+      });
   };
+
+   const studentVerify = async (hash,id) => {
+    await Web3Data.contract.methods
+      .verify(hash,id)
+      .send({ from: Web3Data.accounts[0] })
+      .on("transactionHash", function (hash) {
+        console.log("Successfully Verified.");
+        console.log(hash);
+       });
+  };
+
 
   useEffect(() => {
     loadWeb3();
@@ -71,6 +87,8 @@ function App() {
     <div className="App">
       <OwnerVerify ownerVerify={ownerVerify} />
       <Upload sendDocs={sendDocs}/>
+      <StudentVerify studentVerify={studentVerify}/>
+
     </div>
   );
 }
