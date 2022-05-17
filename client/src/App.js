@@ -4,7 +4,7 @@ import OwnerVerify from "./components/OwnerVerify";
 import getWeb3 from "./getWeb3";
 import Upload from "./components/Upload";
 import { useEffect, useState } from "react";
-import './App.css';
+import "./App.css";
 import StudentVerify from "./components/StudentVerify";
 import GetDocs from "./components/GetDocs";
 
@@ -69,26 +69,25 @@ function App() {
       });
   };
 
-   const studentVerify = async (hash,id) => {
+  const studentVerify = async (hash, id) => {
     await Web3Data.contract.methods
-      .verify(hash,id)
+      .verify(hash, id)
       .send({ from: Web3Data.accounts[0] })
       .on("transactionHash", function (hash) {
         console.log("Successfully Verified.");
         console.log(hash);
-       });
-   };
-  
-   const fetch = async (id) => {
+      });
+  };
+
+  const fetch = async (id) => {
     await Web3Data.contract.methods
       .GetDoc(id)
       .call()
       .on("transactionHash", function (hash) {
         console.log("Here are your docs");
         console.log(hash);
-       });
+      });
   };
- 
 
   useEffect(() => {
     loadWeb3();
@@ -97,10 +96,9 @@ function App() {
   return (
     <div className="App">
       <OwnerVerify ownerVerify={ownerVerify} />
-      <Upload sendDocs={sendDocs}/>
+      <Upload sendDocs={sendDocs} />
       <StudentVerify studentVerify={studentVerify} />
-      <GetDocs fetch={fetch}/>
-
+      <GetDocs fetch={fetch} />
     </div>
   );
 }

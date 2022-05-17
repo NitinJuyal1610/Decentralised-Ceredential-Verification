@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import { create } from "ipfs-http-client";
 const client = create("https://ipfs.infura.io:5001/api/v0");
 
-function StudentVerify({studentVerify}) {
-
-  const [file, setFile] = useState(null);
-  const [id, setId] = useState(null);
+function StudentVerify({ studentVerify }) {
+  const [file2, setFile] = useState(null);
+  const [id, setId] = useState("0");
 
   function handleInfo(e) {
     e.preventDefault();
@@ -27,18 +26,17 @@ function StudentVerify({studentVerify}) {
   async function addToIpfs(e) {
     e.preventDefault();
     try {
-      const added = await client.add(file);
+      const added = await client.add(file2);
       const hash = added.path;
       studentVerify(hash, id);
-      
     } catch (e) {
       console.log("Error Uploading File", e);
     }
   }
   return (
-      <>
+    <>
       <form className="formStyle" onSubmit={(e) => addToIpfs(e)}>
-        <h1>Upload the Document here</h1>
+        <h1>Verify the Document here</h1>
         <p>Enter Your Id here</p>
         <input
           type="text"
@@ -59,7 +57,7 @@ function StudentVerify({studentVerify}) {
         </div>
       </form>
     </>
-  )
+  );
 }
 
-export default StudentVerify
+export default StudentVerify;
