@@ -5,12 +5,7 @@ function GetDocs({ fetch }) {
 
   const displayInfo = (e) => {
     e.preventDefault();
-    try {
-      const data = fetch(id).then((result) => console.log(result));
-      console.log(data, "this is data");
-    } catch (e) {
-      console.log("Error Fetching files", e);
-    }
+    const data = fetch(id);
   };
 
   return (

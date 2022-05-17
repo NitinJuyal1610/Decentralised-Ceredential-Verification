@@ -80,13 +80,14 @@ function App() {
   };
 
   const fetch = async (id) => {
-    return await Web3Data.contract.methods
-      .GetDoc(id)
-      .call()
-      .on("transactionHash", function (hash) {
-        console.log("Here are your docs");
-        console.log(hash);
-      });
+    try {
+      await Web3Data.contract.methods
+        .GetDoc(id)
+        .call({ from: Web3Data.accounts[0] })
+        .then((result) => console.log(result));
+    } catch (e) {
+      console.log("An error Occured ", e);
+    }
   };
 
   useEffect(() => {
