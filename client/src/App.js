@@ -81,7 +81,7 @@ function App() {
   
    const fetch = async (id) => {
     await Web3Data.contract.methods
-      .GetDocs(id)
+      .GetDoc(id)
       .call()
       .on("transactionHash", function (hash) {
         console.log("Here are your docs");

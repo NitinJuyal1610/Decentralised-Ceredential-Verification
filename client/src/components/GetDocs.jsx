@@ -17,7 +17,7 @@ function GetDocs({fetch}) {
               value={id}
               onChange={(e)=>setId(e.target.value)}
           />
-      <button type="submit" onClick={(e)=>handleChange(e)} >Get Docs</button>
+      <button type="submit" onSubmit={(e)=>handleChange(e)} >Get Docs</button>
     </div>
   )
 }
