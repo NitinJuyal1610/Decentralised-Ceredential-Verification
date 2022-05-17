@@ -80,7 +80,7 @@ function App() {
   };
 
   const fetch = async (id) => {
-    await Web3Data.contract.methods
+    return await Web3Data.contract.methods
       .GetDoc(id)
       .call()
       .on("transactionHash", function (hash) {
