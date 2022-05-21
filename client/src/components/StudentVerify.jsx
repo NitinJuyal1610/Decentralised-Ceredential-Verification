@@ -50,7 +50,6 @@ function StudentVerify({ studentVerify }) {
           <input
             className="Upload"
             type="file"
-            value={file2 || ""}
             onChange={(e) => retrieveFile(e)}
             name="file"
           />
