@@ -2,16 +2,11 @@ import React, { useState } from "react";
 
 function GetDocs({ fetch }) {
   const [id, setId] = useState("");
-  const [data, setData] = useState({
-    hash: "",
-    uploader: "",
-    dataUploaded: "",
-    uploaderAddress: "",
-  });
 
   const displayInfo = (e) => {
     e.preventDefault();
     const data = fetch(id);
+    console.log(data[1]);
   };
 
   return (
