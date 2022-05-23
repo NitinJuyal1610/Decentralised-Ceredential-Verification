@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import StudentVerify from "./components/StudentVerify";
 import GetDocs from "./components/GetDocs";
+import imgg from "./components/homePage.jpg";
 
 function App() {
   const [Web3Data, SetWeb3Data] = useState({
@@ -115,21 +116,20 @@ function App() {
             </ul>
           </div>
         </div>
-        <div className="info">
-          <div>
-            <p className="Header">Lorem ipsum dolor sit amet</p>
-            <p className="para">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-            </p>
 
-            <button className="button"> RockOn</button>
-          </div>
+        <div className="about">
+          <p className="Header">Lorem ipsum dolor sit amet</p>
+          <p className="para">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+          </p>
 
-          <div>//add image</div>
+          <button className="button"> RockOn</button>
         </div>
+
+        <img src={imgg} className="imgg" alt="image here" />
       </div>
     </div>
   );
