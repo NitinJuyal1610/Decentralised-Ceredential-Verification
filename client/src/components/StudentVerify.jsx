@@ -35,9 +35,15 @@ function StudentVerify({ studentVerify }) {
   }
   return (
     <>
+<<<<<<< HEAD
       <form onSubmit={(e) => addToIpfs(e)}>
         <h1>Verify the Document here</h1>
         <p>Enter Your Id here</p>
+=======
+      <form className="formStyle" onSubmit={(e) => addToIpfs(e)}>
+        <h1 className="heading">Verify the Document here</h1>
+        <p >Enter Your Id here</p>
+>>>>>>> 0dd363ba1a934d989f099eeb111e7d7c9c6692c6
         <input
           type="text"
           name="id"
