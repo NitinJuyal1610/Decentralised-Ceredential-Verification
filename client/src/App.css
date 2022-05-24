@@ -103,5 +103,11 @@ a:active {
 }
 
 .formStyle h1 {
-  color: rgb(183, 229, 221);
+  color: white;
+  font-size: 3rem;
+}
+
+.formStyle p {
+  color: white;
+  font-size: 2rem;
 }

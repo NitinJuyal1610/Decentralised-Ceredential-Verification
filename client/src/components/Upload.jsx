@@ -47,7 +47,7 @@ const Upload = ({ sendDocs }) => {
 
   return (
     <>
-      <form onSubmit={(e) => addToIpfs(e)}>
+      <form className="formStyle" onSubmit={(e) => addToIpfs(e)}>
         <h1>Upload the Document here</h1>
         <p>Enter Your Name here</p>
         <input

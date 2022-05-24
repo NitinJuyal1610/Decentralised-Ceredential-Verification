@@ -5,12 +5,13 @@ function OwnerVerify({ ownerVerify }) {
   return (
     <div>
       <form
+        className="formStyle"
         onSubmit={(e) => {
           e.preventDefault();
           ownerVerify(add);
         }}
       >
-        <label htmlFor="">Register Institute address </label>
+        <h1 htmlFor="">Register Institute address </h1>
         <br />
         <br />
         <input

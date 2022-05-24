@@ -10,7 +10,7 @@ function GetDocs({ fetch }) {
   };
 
   return (
-    <div>
+    <div className="formStyle">
       <h1>Collect your documents</h1>
       <p>Enter your Aadhar number</p>
       <input type="number" value={id} onChange={(e) => setId(e.target.value)} />
