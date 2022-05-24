@@ -123,7 +123,7 @@ function App() {
           </div>
         </div>
         {/* <HomePage /> */}
-        {/* {comp} */}
+        {comp}
       </div>
       
     </div>

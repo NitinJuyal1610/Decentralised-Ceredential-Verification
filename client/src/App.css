@@ -4,7 +4,7 @@
 
 body {
   /* background-image: url(./components/background.jpg); */
-  background-size: cover;
+  
   height: 100vh;
   width: 300px;
   background-repeat: no-repeat;
@@ -16,6 +16,7 @@ body {
 
 .container {
   background-image: url(./components/background.jpg);
+  background-size: cover;
   width: 93%;
   height: 90%;
   position: absolute;
@@ -27,7 +28,7 @@ body {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-left: 1px solid rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(5px);
+  /* backdrop-filter: blur(5px); */
   padding: 20px;
   margin-top: 10px;
 }
