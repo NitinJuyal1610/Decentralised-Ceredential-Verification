@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import StudentVerify from "./components/StudentVerify";
 import GetDocs from "./components/GetDocs";
-import imgg from "./components/homePage.jpg";
+import HomePage from "./components/HomePage";
 
 function App() {
   const [Web3Data, SetWeb3Data] = useState({
@@ -15,6 +15,8 @@ function App() {
     accounts: null,
     contract: null,
   });
+
+  const [Loading, SetLoading] = useState(true);
 
   const loadWeb3 = async () => {
     //connect web3 with http provider
@@ -39,6 +41,7 @@ function App() {
           contract: instance,
         })
       );
+      SetLoading(false);
 
       console.log(Web3Data);
     } catch (error) {
@@ -97,40 +100,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className="container">
-        <div className="Nav">
-          <h1>Credify</h1>
-          <div>
-            <ul
-              style={{
-                display: "flex",
-                gap: "30px",
-                listStyle: " none",
-                fontSize: "18px",
-              }}
-            >
-              <li href="#">Home</li>
-              <li href="#">VerifyDocs</li>
-              <li href="#">GetDocs</li>
-              <li href="#">StoreDocs</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="about">
-          <p className="Header">Lorem ipsum dolor sit amet</p>
-          <p className="para">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-          </p>
-
-          <button className="button"> RockOn</button>
-        </div>
-
-        <img src={imgg} className="imgg" alt="image here" />
-      </div>
+      <HomePage />
     </div>
   );
 }
