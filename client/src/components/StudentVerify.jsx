@@ -37,7 +37,7 @@ function StudentVerify({ studentVerify }) {
     <>
       <form className="formStyle" onSubmit={(e) => addToIpfs(e)}>
         <h1 className="heading">Verify the Document here</h1>
-        <p>Enter Your Id here</p>
+        <p >Enter Your Id here</p>
         <input
           type="text"
           name="id"
