@@ -12,8 +12,7 @@ function OwnerVerify({ ownerVerify }) {
         }}
       >
         <h1 htmlFor="">Register Institute address </h1>
-        <br />
-        <br />
+
         <input
           type="text"
           name="address"
@@ -21,7 +20,8 @@ function OwnerVerify({ ownerVerify }) {
           onChange={(e) => setadd(e.target.value)}
           placeholder="0xEC5a998A3C04D1900ce13a3055e567Cf82e55abc"
         ></input>
-        <button>Register</button>
+        <br />
+        <button className="myButton">Register</button>
       </form>
     </div>
   );

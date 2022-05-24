@@ -111,3 +111,35 @@ a:active {
   color: white;
   font-size: 2rem;
 }
+
+.myButton {
+  box-shadow: 0px 10px 14px -7px #276873;
+  background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+  background-color: #599bb3;
+  border-radius: 12px 0px 12px 0px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 10px 18px;
+  border: none;
+  text-decoration: none;
+  font-size: large;
+  font-weight: 900;
+  margin-top: 12px;
+  text-shadow: 0px 1px 0px #3d768a;
+}
+.myButton:hover {
+  background: linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+  background-color: #408c99;
+}
+.myButton:active {
+  position: relative;
+  top: 1px;
+}
+
+.Upload {
+  margin-left: 6rem;
+}

@@ -53,7 +53,10 @@ function StudentVerify({ studentVerify }) {
             onChange={(e) => retrieveFile(e)}
             name="file"
           />
-          <button type="submit">Upload</button>
+           <br />
+          <button className="myButton" type="submit">
+            Upload
+          </button>
         </div>
       </form>
     </>

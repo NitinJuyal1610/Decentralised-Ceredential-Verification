@@ -80,6 +80,7 @@ function App() {
       .send({ from: Web3Data.accounts[0] })
       .on("transactionHash", function (hash) {
         console.log("Successfully Verified.");
+        comp = " Successfully Verified";
         console.log(hash);
       });
   };
@@ -128,7 +129,7 @@ function App() {
                 <a
                   href="#"
                   onClick={(e) => {
-                    SetComp(<StudentVerify studentVerify={studentVerify}/>);
+                    SetComp(<StudentVerify studentVerify={studentVerify} />);
                     e.preventDefault();
                   }}
                 >
@@ -150,7 +151,7 @@ function App() {
                 <a
                   href="#"
                   onClick={(e) => {
-                    SetComp(<Upload sendDocs={sendDocs}/>);
+                    SetComp(<Upload sendDocs={sendDocs} />);
                     e.preventDefault();
                   }}
                 >
@@ -161,7 +162,7 @@ function App() {
                 <a
                   href="#"
                   onClick={(e) => {
-                    SetComp(<OwnerVerify ownerVerify={ownerVerify}/>);
+                    SetComp(<OwnerVerify ownerVerify={ownerVerify} />);
                     e.preventDefault();
                   }}
                 >

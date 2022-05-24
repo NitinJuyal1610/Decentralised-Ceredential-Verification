@@ -14,7 +14,12 @@ function GetDocs({ fetch }) {
       <h1>Collect your documents</h1>
       <p>Enter your Aadhar number</p>
       <input type="number" value={id} onChange={(e) => setId(e.target.value)} />
-      <button type="submit" onClick={(e) => displayInfo(e)}>
+      <br />
+      <button
+        className="myButton"
+        type="submit"
+        onClick={(e) => displayInfo(e)}
+      >
         Get Docs
       </button>
     </div>
