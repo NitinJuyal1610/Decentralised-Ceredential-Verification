@@ -4,26 +4,8 @@ import imgg from "./homePage.jpg";
 export default function HomePage() {
   return (
     <div>
-      <div className="container">
-        <div className="Nav">
-          <h1>Credify</h1>
-          <div>
-            <ul
-              style={{
-                display: "flex",
-                gap: "30px",
-                listStyle: " none",
-                fontSize: "18px",
-              }}
-            >
-              <li href="#">Home</li>
-              <li href="#">VerifyDocs</li>
-              <li href="#">GetDocs</li>
-              <li href="#">StoreDocs</li>
-            </ul>
-          </div>
-        </div>
-
+      
+      
         <div className="about">
           <p className="Header">Lorem ipsum dolor sit amet</p>
           <p className="para">
@@ -36,8 +18,7 @@ export default function HomePage() {
           <button className="button"> RockOn</button>
         </div>
 
-        <img src={imgg} className="imgg" alt="image here" />
-      </div>
+        {/* <img src={imgg} className="imgg" alt="image here" /> */}
     </div>
   );
 }
