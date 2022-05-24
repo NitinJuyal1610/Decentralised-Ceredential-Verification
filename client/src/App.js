@@ -17,6 +17,7 @@ function App() {
   });
 
   const [Loading, SetLoading] = useState(true);
+  const [comp, SetComp] = useState(<HomePage/>);
 
   const loadWeb3 = async () => {
     //connect web3 with http provider
@@ -97,10 +98,34 @@ function App() {
   useEffect(() => {
     loadWeb3();
   }, []);
+  
 
   return (
     <div className="App">
-      <HomePage />
+      <div className="container">
+        <div className="Nav">
+          <h1>Credify</h1>
+          <div>
+            <ul
+              style={{
+                display: "flex",
+                gap: "30px",
+                listStyle: " none",
+                fontSi21ze: "18px",
+              }}
+            >
+              <li ><a href='#' onClick={(e) => { SetComp(<HomePage />); e.preventDefault() }}  >Home</a></li>
+              <li ><a href='#' onClick={(e) => { SetComp(<StudentVerify />); e.preventDefault() }}>VerifyDocs</a></li>
+              <li ><a href='#' onClick={(e) => { SetComp(<GetDocs />); e.preventDefault() }}>GetDocs</a></li>
+              <li ><a href='#' onClick={(e) => { SetComp(<Upload />); e.preventDefault() }}>StoreDocs</a></li>
+              <li ><a href='#' onClick={(e) => { SetComp(<OwnerVerify />); e.preventDefault() }}>Register Institute</a></li>
+            </ul>
+          </div>
+        </div>
+        {/* <HomePage /> */}
+        {/* {comp} */}
+      </div>
+      
     </div>
   );
 }
