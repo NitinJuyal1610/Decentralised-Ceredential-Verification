@@ -80,7 +80,7 @@ function App() {
       .send({ from: Web3Data.accounts[0] })
       .on("transactionHash", function (hash) {
         console.log("Successfully Verified.");
-        comp = " Successfully Verified";
+        SetComp(<h1>Successfully Verified</h1>);
         console.log(hash);
       });
   };
