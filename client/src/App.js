@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import StudentVerify from "./components/StudentVerify";
 import GetDocs from "./components/GetDocs";
+import HomePage from "./components/HomePage";
 
 function App() {
   const [Web3Data, SetWeb3Data] = useState({
@@ -14,6 +15,8 @@ function App() {
     accounts: null,
     contract: null,
   });
+
+  const [Loading, SetLoading] = useState(true);
 
   const loadWeb3 = async () => {
     //connect web3 with http provider
@@ -38,6 +41,7 @@ function App() {
           contract: instance,
         })
       );
+      SetLoading(false);
 
       console.log(Web3Data);
     } catch (error) {
@@ -96,10 +100,7 @@ function App() {
 
   return (
     <div className="App">
-      <OwnerVerify ownerVerify={ownerVerify} />
-      <Upload sendDocs={sendDocs} />
-      <StudentVerify studentVerify={studentVerify} />
-      <GetDocs fetch={fetch} />
+      <HomePage />
     </div>
   );
 }

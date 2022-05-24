@@ -6,6 +6,7 @@ function GetDocs({ fetch }) {
   const displayInfo = (e) => {
     e.preventDefault();
     const data = fetch(id);
+    console.log(data[1]);
   };
 
   return (
