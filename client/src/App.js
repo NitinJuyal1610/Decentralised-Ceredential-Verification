@@ -75,14 +75,13 @@ function App() {
   };
 
   const studentVerify = async (hash, id) => {
-    await Web3Data.contract.methods
-      .verify(hash, id)
-      .send({ from: Web3Data.accounts[0] })
-      .on("transactionHash", function (hash) {
-        console.log("Successfully Verified.");
-        SetComp(<h1>Successfully Verified</h1>);
-        console.log(hash);
-      });
+    try {
+      await Web3Data.contract.methods
+        .verify(hash, id)
+        .send({ from: Web3Data.accounts[0] });
+    } catch (e) {
+      SetComp(<div>FakeDoc</div>);
+    }
   };
 
   const fetch = async (id) => {
