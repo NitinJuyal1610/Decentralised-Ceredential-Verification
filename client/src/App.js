@@ -128,7 +128,7 @@ function App() {
                 <a
                   href="#"
                   onClick={(e) => {
-                    SetComp(<StudentVerify />);
+                    SetComp(<StudentVerify studentVerify={studentVerify}/>);
                     e.preventDefault();
                   }}
                 >
@@ -139,7 +139,7 @@ function App() {
                 <a
                   href="#"
                   onClick={(e) => {
-                    SetComp(<GetDocs />);
+                    SetComp(<GetDocs fetch={fetch} />);
                     e.preventDefault();
                   }}
                 >
@@ -150,7 +150,7 @@ function App() {
                 <a
                   href="#"
                   onClick={(e) => {
-                    SetComp(<Upload />);
+                    SetComp(<Upload sendDocs={sendDocs}/>);
                     e.preventDefault();
                   }}
                 >
@@ -161,7 +161,7 @@ function App() {
                 <a
                   href="#"
                   onClick={(e) => {
-                    SetComp(<OwnerVerify />);
+                    SetComp(<OwnerVerify ownerVerify={ownerVerify}/>);
                     e.preventDefault();
                   }}
                 >
