@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { create } from "ipfs-http-client";
 const client = create("https://ipfs.infura.io:5001/api/v0");
 
-const Upload = ({sendDocs}) => {
+const Upload = ({ sendDocs }) => {
   const [file, setFile] = useState(null);
   const [info, setInfo] = useState({
     name: "",
@@ -38,9 +38,8 @@ const Upload = ({sendDocs}) => {
       const date = `${current.getDate()}/${
         current.getMonth() + 1
       }/${current.getFullYear()}`;
-      console.log(file, hash, date, info.name,info.id);
-      sendDocs(hash,date,info.id,info.name);
-      
+      console.log(file, hash, date, info.name, info.id);
+      sendDocs(hash, date, info.id, info.name);
     } catch (e) {
       console.log("Error Uploading File", e);
     }
@@ -48,7 +47,7 @@ const Upload = ({sendDocs}) => {
 
   return (
     <>
-      <form className="formStyle" onSubmit={(e) => addToIpfs(e)}>
+      <form onSubmit={(e) => addToIpfs(e)}>
         <h1>Upload the Document here</h1>
         <p>Enter Your Name here</p>
         <input
