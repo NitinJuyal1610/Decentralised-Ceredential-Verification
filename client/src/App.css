@@ -39,6 +39,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* backdrop-filter: blur(5px); */
+  /* background: rgb(255, 255, 255, 0.08); */
 }
 
 .info {
@@ -64,6 +66,10 @@ a:focus,
 a:active {
   text-decoration: none;
   color: inherit;
+}
+
+a:hover {
+  border-bottom: 1px solid white;
 }
 
 .para {
@@ -142,4 +148,21 @@ a:active {
 
 .Upload {
   margin-left: 6rem;
+}
+
+.success {
+  background: -webkit-linear-gradient(45deg, #66ff00 0%, #fffb7d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 5rem;
+  font-weight: 900;
+}
+
+.error {
+  font-size: 5rem;
+  font-weight: 900;
+
+  background: -webkit-linear-gradient(160deg, #e32636 0%, #ed2939 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

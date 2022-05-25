@@ -58,29 +58,66 @@ function App() {
     await Web3Data.contract.methods
       .StoreDocument(hash, date, id, name)
       .send({ from: Web3Data.accounts[0], gas: 5000000 })
-      .on("transactionHash", function (hash) {
-        console.log("Successfully uploaded.");
-        console.log(hash);
+      .on("transactionHash", (hash) => {
+        console.log("TX Hash", hash);
+      })
+      .then((receipt) => {
+        console.log("Mined", receipt);
+        SetComp(<div className="success">Successfully Uploaded Docs</div>);
+      })
+      .catch((err) => {
+        console.log("Error", err);
+        SetComp(<div className="error">Error Uploading ,Try Again!</div>);
+      })
+      .finally(() => {
+        console.log("Extra Code After Everything");
       });
   };
 
   const ownerVerify = async (address) => {
-    await Web3Data.contract.methods
-      .ownerVerification(address)
-      .send({ from: Web3Data.accounts[0] })
-      .on("transactionHash", function (hash) {
-        console.log("Successfully Registered.");
-        console.log(hash);
-      });
+    try {
+      await Web3Data.contract.methods
+        .ownerVerification(address)
+        .send({ from: Web3Data.accounts[0] })
+        .on("transactionHash", (hash) => {
+          console.log("TX Hash", hash);
+        })
+        .then((receipt) => {
+          console.log("Mined", receipt);
+          SetComp(<div className="success">Successfully Added Institute</div>);
+        })
+        .catch((err) => {
+          console.log("Error", err);
+          SetComp(<div className="error">No such Address present!</div>);
+        })
+        .finally(() => {
+          console.log("Extra Code After Everything");
+        });
+    } catch (err) {
+      console.log("Invalid Parameters");
+    }
   };
 
   const studentVerify = async (hash, id) => {
     try {
       await Web3Data.contract.methods
         .verify(hash, id)
-        .send({ from: Web3Data.accounts[0] });
+        .send({ from: Web3Data.accounts[0] })
+        .on("transactionHash", (hash) => {
+          console.log("TX Hash", hash);
+        })
+        .then((receipt) => {
+          console.log("Mined", receipt);
+          SetComp(<div className="success">Successfully Verified</div>);
+        })
+        .catch((err) => {
+          console.log("Error", err);
+        })
+        .finally(() => {
+          console.log("Extra Code After Everything");
+        });
     } catch (e) {
-      SetComp(<div>FakeDoc</div>);
+      SetComp(<div className="error">Error Occured While uploading doc!</div>);
     }
   };
 
@@ -89,7 +126,11 @@ function App() {
       await Web3Data.contract.methods
         .GetDoc(id)
         .call({ from: Web3Data.accounts[0] })
-        .then((result) => console.log(result));
+        .then((result) => console.log(result))
+        .catch((err) => {
+          console.log("Error", err);
+          SetComp(<div className="error">Verify First!</div>);
+        });
     } catch (e) {
       console.log("An error Occured ", e);
     }
