@@ -18,7 +18,7 @@ function OwnerVerify({ ownerVerify }) {
           name="address"
           value={add}
           onChange={(e) => setadd(e.target.value)}
-          placeholder="0xEC5a998A3C04D1900ce13a3055e567Cf82e55abc"
+          placeholder="Metamask Wallet Address"
         ></input>
         <br />
         <button className="myButton">Register</button>

@@ -6,7 +6,7 @@ const Upload = ({ sendDocs }) => {
   const [file, setFile] = useState(null);
   const [info, setInfo] = useState({
     name: "",
-    id: 0,
+    id: "",
   });
 
   function handleInfo(e) {
@@ -49,22 +49,22 @@ const Upload = ({ sendDocs }) => {
     <>
       <form className="formStyle" onSubmit={(e) => addToIpfs(e)}>
         <h1>Upload the Document here</h1>
-        <p>Enter Your Name here</p>
+
         <input
           type="text"
           name="name"
           value={info.name}
           onChange={(e) => handleInfo(e)}
-          placeholder="Name.."
+          placeholder="Username"
           required
         ></input>
-        <p>Enter Your Id here</p>
+        <br />
         <input
           type="text"
           name="id"
           value={info.id}
           onChange={(e) => handleInfo(e)}
-          placeholder="Id.."
+          placeholder="Adhaar ID"
           required
         ></input>
         <div>

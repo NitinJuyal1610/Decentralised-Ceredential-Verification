@@ -69,7 +69,7 @@ a:active {
 }
 
 a:hover {
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid rgba(10, 180, 180, 1);
 }
 
 .para {
@@ -111,17 +111,19 @@ a:hover {
 .formStyle h1 {
   color: white;
   font-size: 3rem;
-}
+  font-weight: 200;
 
-.formStyle p {
-  color: white;
-  font-size: 2rem;
+  background: -webkit-linear-gradient(
+    rgba(204, 254, 152, 1) 0%,
+    rgba(229, 253, 190, 1) 92.4%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .myButton {
-  box-shadow: 0px 10px 14px -7px #276873;
-  background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
-  background-color: #599bb3;
+  background: rgb(255, 255, 255, 0.08);
+  border: 1px solid rgba(10, 180, 180, 1);
   border-radius: 12px 0px 12px 0px;
   display: inline-block;
   cursor: pointer;
@@ -130,7 +132,6 @@ a:hover {
   font-size: 10px;
   font-weight: bold;
   padding: 10px 18px;
-  border: none;
   text-decoration: none;
   font-size: large;
   font-weight: 900;
@@ -138,16 +139,16 @@ a:hover {
   text-shadow: 0px 1px 0px #3d768a;
 }
 .myButton:hover {
-  background: linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
-  background-color: #408c99;
+  background-color: #599bb3;
+
+  pointer-events: none;
+  border: none;
+  background: linear-gradient(to bottom, #49afa7 95%, #408c99 100%);
 }
 .myButton:active {
   position: relative;
+  transform: scale(1.1);
   top: 1px;
-}
-
-.Upload {
-  margin-left: 6rem;
 }
 
 .success {
@@ -165,4 +166,21 @@ a:hover {
   background: -webkit-linear-gradient(160deg, #e32636 0%, #ed2939 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+input {
+  padding: 0.4rem;
+  width: 15rem;
+  color: whitesmoke;
+  margin: 15px 0;
+  font-size: 16px;
+  padding: 10px;
+  width: 250px;
+  border: 1px solid rgba(10, 180, 180, 1);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background: rgba(20, 20, 20, 0.2);
+  color: white;
+  outline: none;
 }

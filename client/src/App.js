@@ -111,7 +111,7 @@ function App() {
           SetComp(<div className="success">Successfully Verified</div>);
         })
         .catch((err) => {
-          console.log("Error", err);
+          SetComp(<div className="error">Fake Document</div>);
         })
         .finally(() => {
           console.log("Extra Code After Everything");

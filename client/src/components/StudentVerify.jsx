@@ -4,7 +4,7 @@ const client = create("https://ipfs.infura.io:5001/api/v0");
 
 function StudentVerify({ studentVerify }) {
   const [file2, setFile] = useState(null);
-  const [id, setId] = useState("0");
+  const [id, setId] = useState("");
 
   function handleInfo(e) {
     e.preventDefault();
@@ -37,13 +37,12 @@ function StudentVerify({ studentVerify }) {
     <>
       <form className="formStyle" onSubmit={(e) => addToIpfs(e)}>
         <h1>Verify the Document here</h1>
-        <p>Enter Your Id here</p>
         <input
           type="text"
           name="id"
           value={id || ""}
           onChange={(e) => handleInfo(e)}
-          placeholder="Id.."
+          placeholder="Adhaar ID"
           required
         ></input>
         <div>
@@ -53,7 +52,7 @@ function StudentVerify({ studentVerify }) {
             onChange={(e) => retrieveFile(e)}
             name="file"
           />
-           <br />
+          <br />
           <button className="myButton" type="submit">
             Upload
           </button>
