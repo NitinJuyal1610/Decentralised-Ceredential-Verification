@@ -140,8 +140,6 @@ a:hover {
 }
 .myButton:hover {
   background-color: #599bb3;
-
-  pointer-events: none;
   border: none;
   background: linear-gradient(to bottom, #49afa7 95%, #408c99 100%);
 }

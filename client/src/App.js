@@ -17,6 +17,7 @@ function App() {
   });
 
   const [Loading, SetLoading] = useState(true);
+  const [Cert, setCert] = useState("");
   const [comp, SetComp] = useState(<HomePage />);
 
   const loadWeb3 = async () => {
@@ -126,7 +127,22 @@ function App() {
       await Web3Data.contract.methods
         .GetDoc(id)
         .call({ from: Web3Data.accounts[0] })
-        .then((result) => console.log(result))
+        .then((data) => {
+          console.log(data);
+          const url = `https://ipfs.io/ipfs/${data[1]}`;
+          setCert(
+            <div className="Card">
+              <p>Uploader: {data[3]}</p>
+              <p>Uploader Address: {data[2]}</p>
+              <p>Uploader Id: {data[0]}</p>
+              <p>Data Uploader: {data[4]}</p>
+
+              <a href={url} target="_blank">
+                Document
+              </a>
+            </div>
+          );
+        })
         .catch((err) => {
           console.log("Error", err);
           SetComp(<div className="error">Verify First!</div>);
@@ -151,7 +167,7 @@ function App() {
                 display: "flex",
                 gap: "30px",
                 listStyle: " none",
-                fontSi21ze: "18px",
+                fontSize: "18px",
               }}
             >
               <li>
@@ -159,6 +175,7 @@ function App() {
                   href="#"
                   onClick={(e) => {
                     SetComp(<HomePage />);
+                    setCert("");
                     e.preventDefault();
                   }}
                 >
@@ -170,6 +187,7 @@ function App() {
                   href="#"
                   onClick={(e) => {
                     SetComp(<StudentVerify studentVerify={studentVerify} />);
+                    setCert("");
                     e.preventDefault();
                   }}
                 >
@@ -181,6 +199,7 @@ function App() {
                   href="#"
                   onClick={(e) => {
                     SetComp(<GetDocs fetch={fetch} />);
+                    setCert("");
                     e.preventDefault();
                   }}
                 >
@@ -192,6 +211,7 @@ function App() {
                   href="#"
                   onClick={(e) => {
                     SetComp(<Upload sendDocs={sendDocs} />);
+                    setCert("");
                     e.preventDefault();
                   }}
                 >
@@ -203,6 +223,7 @@ function App() {
                   href="#"
                   onClick={(e) => {
                     SetComp(<OwnerVerify ownerVerify={ownerVerify} />);
+                    setCert("");
                     e.preventDefault();
                   }}
                 >
@@ -214,6 +235,8 @@ function App() {
         </div>
         {/* <HomePage /> */}
         {comp}
+        <br />
+        {Cert}
       </div>
     </div>
   );
