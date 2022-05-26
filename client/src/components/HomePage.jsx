@@ -1,6 +1,4 @@
 import React from "react";
-// import imgg from "./bg.jpeg";
-import "animate.css";
 
 export default function HomePage() {
   return (
