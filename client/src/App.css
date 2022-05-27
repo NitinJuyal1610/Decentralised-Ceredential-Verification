@@ -120,13 +120,13 @@ a:hover {
 }
 
 .formStyle h1 {
-  color: white;
+  color: rgba(150, 37, 56, 0.925);
   font-size: 3rem;
-  font-weight: 200;
+  font-weight: 400;
 
   background: -webkit-linear-gradient(
-    rgba(204, 254, 152, 1) 0%,
-    rgba(229, 253, 190, 1) 92.4%
+    rgb(18, 238, 201) 0%,
+    rgb(155, 216, 98) 92.4%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
