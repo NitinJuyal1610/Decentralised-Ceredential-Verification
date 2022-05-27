@@ -89,7 +89,7 @@ function App() {
         })
         .catch((err) => {
           console.log("Error", err);
-          SetComp(<div className="error">No such Address present!</div>);
+          SetComp(<div className="error">You are not authorised!</div>);
         })
         .finally(() => {
           console.log("Extra Code After Everything");
@@ -170,7 +170,7 @@ function App() {
     <div className="App">
       <div className="container">
         <div className="Nav">
-          <h1>Credify</h1>
+          <h1>Dokify</h1>
           <div>
             <ul
               style={{
