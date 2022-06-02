@@ -58,7 +58,7 @@ function App() {
   const sendDocs = async (hash, date, id, name) => {
     await Web3Data.contract.methods
       .StoreDocument(hash, date, id, name)
-      .send({ from: Web3Data.accounts[0], gas: 5000000 })
+      .send({ from: Web3Data.accounts[0] })
       .on("transactionHash", (hash) => {
         console.log("TX Hash", hash);
       })
@@ -133,10 +133,10 @@ function App() {
           setCert(
             <div className="Card">
               <p>
-                <strong>Uploader:</strong> {data[3]}
+                <strong>Student Name:</strong> {data[3]}
               </p>
               <p>
-                <strong>Uploader Id:</strong> {data[0]}
+                <strong>Student Id:</strong> {data[0]}
               </p>
               <p>
                 <strong>Data Uploaded:</strong> {data[4]}
@@ -186,7 +186,6 @@ function App() {
                   onClick={(e) => {
                     SetComp(<HomePage />);
                     setCert("");
-                    e.preventDefault();
                   }}
                 >
                   Home
@@ -198,7 +197,6 @@ function App() {
                   onClick={(e) => {
                     SetComp(<StudentVerify studentVerify={studentVerify} />);
                     setCert("");
-                    e.preventDefault();
                   }}
                 >
                   VerifyDocs
@@ -210,7 +208,6 @@ function App() {
                   onClick={(e) => {
                     SetComp(<GetDocs fetch={fetch} />);
                     setCert("");
-                    e.preventDefault();
                   }}
                 >
                   GetDocs
@@ -222,7 +219,6 @@ function App() {
                   onClick={(e) => {
                     SetComp(<Upload sendDocs={sendDocs} />);
                     setCert("");
-                    e.preventDefault();
                   }}
                 >
                   StoreDocs
@@ -234,7 +230,6 @@ function App() {
                   onClick={(e) => {
                     SetComp(<OwnerVerify ownerVerify={ownerVerify} />);
                     setCert("");
-                    e.preventDefault();
                   }}
                 >
                   Register Institute
